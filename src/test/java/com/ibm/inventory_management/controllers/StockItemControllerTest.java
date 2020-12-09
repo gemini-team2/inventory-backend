@@ -1,4 +1,4 @@
-   package com.ibm.inventory_management.controllers;
+package com.ibm.inventory_management.controllers;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
@@ -9,6 +9,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.ibm.inventory_management.models.StockItem;
+import com.ibm.inventory_management.services.StockItemApi;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
