@@ -26,13 +26,14 @@ public class SwaggerDocket {
 
     @Bean
     public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(buildApiRequestHandler())
-                .paths(PathSelectors.any())
-                .build()
-                .apiInfo(buildApiInfo());
-    }
+      return new Docket(DocumentationType.SWAGGER_2)
+              .select()
+              .apis(buildApiRequestHandler())
+              .paths(PathSelectors.regex(".*stock-item.*"))
+              .build()
+              .apiInfo(buildApiInfo());
+     }
+ 
 
     protected Predicate<RequestHandler> buildApiRequestHandler() {
         if (!StringUtils.isEmpty(config.getBaseApiPackage())) {
